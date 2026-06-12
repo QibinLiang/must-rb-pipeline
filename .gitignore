@@ -42,6 +42,7 @@ Thumbs.db
 *.key
 *.pem
 apis.txt
+test_volc_services.py
 volc_examples/
 
 # Runtime outputs

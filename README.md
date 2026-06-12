@@ -70,6 +70,20 @@ VOLC_CLONE_SECRET=your_clone_secret
 VOLC_SPEAKER_ID=your_speaker_id
 ```
 
+### 声音克隆（可选）
+
+如需使用自定义音色，可通过字节火山引擎「声音复刻」平台上传/录制音频并获取说话人 ID，填入 `.env` 的 `VOLC_SPEAKER_ID`。
+
+1. 进入 [火山引擎声音复刻](https://www.volcengine.com/product/seedvoice) 控制台，在左侧选择 **声音复刻**：
+   ![声音复刻入口](screenshots/seedvoice_sourcevoice_upload.png)
+
+2. 点击 **上传声音**，按提示录制或上传一段清晰的样本音频。
+
+3. 训练完成后，进入 **API 服务中心**，找到「声音复刻」模型，复制 **音色 ID/标签** 到 `.env` 的 `VOLC_SPEAKER_ID`：
+   ![复制音色 ID](screenshots/get_voice_id.png)
+
+4. 若不设置 `VOLC_SPEAKER_ID`，Pipeline 将自动使用火山引擎 v3 标准内置音色。
+
 ### 汇报人信息（`config/settings.yaml` 或 `.env`）
 
 汇报人信息支持两种方式配置，**`.env` 优先级高于 `settings.yaml`**：
@@ -263,7 +277,7 @@ redbook-pipeline/
 | 模块 | 状态 | 备注 |
 |------|------|------|
 | PDF 解析 | ✅ 完成 | 文本提取 + 图片提取 |
-| LLM 论文分析 | ✅ 完成 | Kimi API 调用正常 |
+| LLM 论文分析 | ✅ 完成 | OpenAI-compatible API 调用正常 |
 | LLM 幻灯片生成 | ✅ 完成 | 口语化旁白 + 自动配图 |
 | PPT 模版填充 | ✅ 完成 | 左右分栏 + 居中文字 + 图片 |
 | TTS 合成 (v3) | ✅ 完成 | 内置音色合成正常 |

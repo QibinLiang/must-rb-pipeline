@@ -53,8 +53,10 @@ cp .env.example .env
 `.env` 示例：
 
 ```bash
-# Kimi API (LLM 内容生成)
-KIMI_API_KEY=your_kimi_api_key
+# LLM API (OpenAI-compatible endpoint)
+LLM_API_KEY=your_llm_api_key
+# LLM_BASE_URL=https://api.openai.com/v1
+# LLM_MODEL=gpt-4o-mini
 
 # Volcengine v3 TTS (标准内置音色)
 VOLC_APPID=your_appid
@@ -247,7 +249,7 @@ redbook-pipeline/
 | 模块 | 技术 |
 |------|------|
 | PDF 解析 | PyMuPDF（文本 + 图片提取） |
-| LLM | Kimi (moonshot-v1-8k) |
+| LLM | OpenAI-compatible API (e.g., GPT-4o / DeepSeek / Kimi) |
 | PPT 操作 | python-pptx |
 | TTS | 火山引擎 v3 TTS |
 | PPT 渲染 | LibreOffice + pdf2image |

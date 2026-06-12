@@ -19,8 +19,8 @@ class PaperAnalyzerSkill(BaseSkill):
         super().__init__(job_id, work_dir, config)
         self.settings = config.get("settings", Settings())
         self.client = OpenAI(
-            api_key=self.settings.kimi_api_key,
-            base_url=self.settings.kimi_base_url,
+            api_key=self.settings.llm_api_key,
+            base_url=self.settings.llm_base_url,
         )
 
     @property
@@ -75,7 +75,7 @@ class PaperAnalyzerSkill(BaseSkill):
     @retry_on_http_error(max_attempts=3, min_wait=4, max_wait=30)
     def _call_llm(self, content: str) -> str:
         response = self.client.chat.completions.create(
-            model=self.settings.kimi_model,
+            model=self.settings.llm_model,
             messages=[
                 {"role": "system", "content": "你是一个学术内容分析专家。请严格输出JSON格式，不要包含markdown代码块标记。"},
                 {"role": "user", "content": content},

@@ -82,7 +82,7 @@ Inter-step data flows through Pydantic v2 models in `src/redbook_pipeline/models
 ### Configuration
 
 Settings are loaded from `.env` (via `pydantic-settings`) and optionally overridden by `config/settings.yaml`. Required env vars:
-- `KIMI_API_KEY` — for LLM content generation
+- `LLM_API_KEY` — for LLM content generation (OpenAI-compatible endpoint; optional `LLM_BASE_URL`, `LLM_MODEL`)
 - `VOLC_APPID`, `VOLC_API_KEY` — for TTS synthesis
 - `VOLC_SPEAKER_ID` — pre-cloned speaker ID (falls back to built-in voice if missing)
 - `PRESENTER_NAME`, `PRESENTER_AFFILIATION` — displayed on PPT cover

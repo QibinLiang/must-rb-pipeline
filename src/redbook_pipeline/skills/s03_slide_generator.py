@@ -19,11 +19,11 @@ class SlideGeneratorSkill(BaseSkill):
         super().__init__(job_id, work_dir, config)
         self.settings = config.get("settings", Settings())
         self.client = OpenAI(
-            api_key=self.settings.kimi_api_key,
-            base_url=self.settings.kimi_base_url,
+            api_key=self.settings.llm_api_key,
+            base_url=self.settings.llm_base_url,
         )
-        # Use 32k/128k model for generating 16 rich slides (needs ~12-16k tokens output)
-        raw_model = getattr(self.settings, "kimi_model", "moonshot-v1-8k")
+        # Use configured model; if it looks like a small-context model, upgrade for 16-slide generation.
+        raw_model = getattr(self.settings, "llm_model", "gpt-4o-mini")
         if "32k" in raw_model or "128k" in raw_model:
             self._model = raw_model
         elif "8k" in raw_model:

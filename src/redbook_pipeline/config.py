@@ -23,10 +23,10 @@ class Settings(BaseSettings):
     template_path: Path = Path("pptx_template/模板.pptx")
     source_voice: Path = Path("source_voice/source.mp3")
 
-    # Kimi / LLM
-    kimi_api_key: str = Field(alias="KIMI_API_KEY")
-    kimi_base_url: str = Field(default="https://api.moonshot.cn/v1", alias="KIMI_BASE_URL")
-    kimi_model: str = Field(default="moonshot-v1-8k", alias="KIMI_MODEL")
+    # LLM (vendor-agnostic, OpenAI-compatible API)
+    llm_api_key: str = Field(alias="LLM_API_KEY")
+    llm_base_url: str = Field(default="https://api.openai.com/v1", alias="LLM_BASE_URL")
+    llm_model: str = Field(default="gpt-4o-mini", alias="LLM_MODEL")
 
     # Volcengine v3 TTS (standard voices)
     volc_appid: str = Field(alias="VOLC_APPID")

@@ -1,0 +1,42 @@
+pipeline:
+  output_dir: "outputs"
+  template_path: "pptx_template/模板.pptx"
+  max_slides: 16
+  min_slides: 8
+  output_language: "zh"
+
+presenter:
+  name: "张三"           # 汇报人姓名，如 "张三"
+  affiliation: "工程学科"    # 单位信息，如 "某某大学 博士生"
+  date: ""           # 汇报日期，如 "2025年6月"，留空则使用当前日期
+
+llm:
+  provider: "kimi"
+  base_url: "https://api.moonshot.cn/v1"
+  model: "moonshot-v1-8k"
+  temperature: 0.7
+  max_tokens: 8192
+
+volcengine:
+  tts_url: "https://openspeech.bytedance.com/api/v1/tts"
+  clone_url: "https://openspeech.bytedance.com/api/v1/mega_tts"
+  cluster: "volcano_icl"
+  source_voice: "source_voice/source.mp3"
+  encoding: "mp3"
+  speed_ratio: 1.0
+  volume_ratio: 1.0
+  pitch_ratio: 1.0
+  request_interval_ms: 500
+
+video:
+  resolution: [1920, 1080]
+  fps: 30
+  slide_tail_buffer_sec: 0.8
+  codec: "libx264"
+  audio_codec: "aac"
+  audio_bitrate: "192k"
+
+retry:
+  max_attempts: 3
+  wait_min_sec: 4
+  wait_max_sec: 30

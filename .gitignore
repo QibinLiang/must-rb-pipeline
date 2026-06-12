@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+*.pem
+apis.txt
+volc_examples/
+
+# Runtime outputs
+outputs/
+*.log
+
+# Input assets (large files)
+papers/
+source_voice/
+
+# Test fixtures (large files)
+tests/fixtures/
+
+# Temporary files
+.tmp/
+tmp/
+
+# Claude Code
+.claude/

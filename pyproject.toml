@@ -1,0 +1,39 @@
+[project]
+name = "redbook-pipeline"
+version = "0.1.0"
+description = "Automated paper introduction video generation pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # PDF parsing
+    "pymupdf>=1.24.0",
+    "pdfplumber>=0.11.0",
+    "pdf2image>=1.17.0",
+
+    # LLM
+    "openai>=1.30.0",
+
+    # PPT
+    "python-pptx>=1.0.0",
+
+    # Data models & config
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.2.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.1",
+
+    # Video
+    "moviepy>=1.0.3",
+
+    # HTTP
+    "httpx>=0.27.0",
+    "tenacity>=8.3.0",
+
+    # CLI & logging
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+    "loguru>=0.7.0",
+]
+
+[project.scripts]
+redbook = "redbook_pipeline.cli:app"

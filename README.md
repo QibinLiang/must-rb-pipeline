@@ -74,12 +74,12 @@ VOLC_SPEAKER_ID=your_speaker_id
 
 如需使用自定义音色，可通过字节火山引擎「声音复刻」平台上传/录制音频并获取说话人 ID，填入 `.env` 的 `VOLC_SPEAKER_ID`。
 
-1. 进入 [火山引擎声音复刻](https://www.volcengine.com/product/seedvoice) 控制台，在左侧选择 **声音复刻**：
+1. 进入 [火山引擎声音复刻](https://console.volcengine.com/speech/new) 控制台，在左侧选择 **声音复刻**：
    ![声音复刻入口](screenshots/seedvoice_sourcevoice_upload.png)
 
 2. 点击 **上传声音**，按提示录制或上传一段清晰的样本音频。
 
-3. 训练完成后，进入 **API 服务中心**，找到「声音复刻」模型，复制 **音色 ID/标签** 到 `.env` 的 `VOLC_SPEAKER_ID`：
+3. 训练完成后，进入 [API 服务中心](https://console.volcengine.com/speech/service/9999)，找到「声音复刻」模型，复制 **音色 ID/标签** 到 `.env` 的 `VOLC_SPEAKER_ID`：
    ![复制音色 ID](screenshots/get_voice_id.png)
 
 4. 若不设置 `VOLC_SPEAKER_ID`，Pipeline 将自动使用火山引擎 v3 标准内置音色。
